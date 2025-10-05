@@ -1,0 +1,14 @@
+[project]
+name = "rag-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=1.1.0",
+    "google-cloud-aiplatform>=1.115.0",
+    "langchain>=0.3.27",
+    "langchain-community>=0.3.29",
+    "langchain-google-vertexai>=2.1.2",
+    "python-dotenv>=1.1.1",
+]
