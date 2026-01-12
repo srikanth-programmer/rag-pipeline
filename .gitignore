@@ -8,7 +8,29 @@ wheels/
 
 # Virtual environments
 .venv
+venv/
+env/
 
-.env 
+# Environment variables (secrets)
+.env
+*.env.local
+
+# Database
 db/
+
+# Logs
 logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+service-account-key.json
+software_engineer/.env
