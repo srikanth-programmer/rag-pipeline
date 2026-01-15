@@ -9,7 +9,8 @@ from src import config
 def get_embedding_model():
     """Initializes and returns the Vertex AI embedding model."""
     print(f"Initializing embedding model: {config.EMBEDDING_MODEL_NAME}")
-    return VertexAIEmbeddings(model_name=config.EMBEDDING_MODEL_NAME)
+    credentials = config.get_credentials()
+    return VertexAIEmbeddings(model_name=config.EMBEDDING_MODEL_NAME, credentials=credentials)
 
 def build_vector_store(chunks: List[Document]):
     """

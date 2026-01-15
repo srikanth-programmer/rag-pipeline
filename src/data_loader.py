@@ -31,7 +31,10 @@ def load_and_chunk_codebase(directory_path: str) -> List[Document]:
     
     print(f"Starting ingestion of codebase at: {directory_path}")
 
-    for root, _, files in os.walk(directory_path):
+    for root, dirs, files in os.walk(directory_path):
+        # Exclude node_modules and hidden directories
+        dirs[:] = [d for d in dirs if d != 'node_modules' and not d.startswith('.')]
+        
         for file in files:
             ext = os.path.splitext(file)[1]
             if ext in SUPPORTED_EXTENSIONS:

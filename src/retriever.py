@@ -25,7 +25,8 @@ def get_retriever():
 def create_rag_chain(retriever):
     """Creates the main RAG chain for question answering."""
     # This function is slightly simplified to just build the chain
-    llm = VertexAI(model_name=config.GENERATIVE_MODEL_NAME, temperature=0.1)
+    credentials = config.get_credentials()
+    llm = VertexAI(model_name=config.GENERATIVE_MODEL_NAME, temperature=0.1, credentials=credentials)
 
     prompt_template = """
     You are an expert software developer assistant. Your task is to answer questions about a codebase.
